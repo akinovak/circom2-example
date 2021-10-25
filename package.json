@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c rollup.config.ts",
+    "test": "jest",
+    "test:js-bundle": "npm run build && node bundle-test.js"
   },
   "keywords": [],
   "author": "",
@@ -16,12 +19,13 @@
     "snarkjs": "^0.4.10"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.0.6",
     "@types/jest": "^27.0.2",
-    "@types/node": "^16.11.5",
     "jest": "^27.3.1",
     "jest-config": "^27.3.1",
-    "ts-jest": "^27.0.7",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.4.4"
+    "rimraf": "^3.0.2",
+    "rollup": "^2.58.3",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^27.0.7"
   }
 }

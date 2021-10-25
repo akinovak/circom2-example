@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "declarationDir": "./dist/types",
-    "composite": true,
     "checkJs": false,
-    "esModuleInterop": true,
     "allowJs": true,
+    "esModuleInterop": true,
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules/**", "tests/**"]
