@@ -1,0 +1,4 @@
+node_modules/
+zkFiles/
+contracts/
+build
