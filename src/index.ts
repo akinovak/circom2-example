@@ -17,12 +17,17 @@ const genWnts = async(input: any, wasmFilePath: string, witnessFileName: string)
     })
 }
 
-export const genProof = async(grothInput: any, wasmFilePath: string, finalZkeyPath: string) => {
+export const genProof = async (grothInput: any, wasmFilePath: string, finalZkeyPath: string) => {
     await genWnts(grothInput, wasmFilePath, 'witness.wtns');
     const { proof, publicSignals } = await groth16.prove(finalZkeyPath, 'witness.wtns', null);
     const exists = fs.existsSync('witness.wtns');
     if(exists) fs.unlinkSync('witness.wtns');
     return { proof, publicSignals };
+}
+
+export const verifyProof = (vKey: string, fullProof: any) => {
+    const { proof, publicSignals } = fullProof
+    return groth16.verify(vKey, publicSignals, proof)
 }
 
 
