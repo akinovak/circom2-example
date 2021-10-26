@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c rollup.config.ts",
-    "test": "jest",
+    "test": "jest --forceExit",
     "test:js-bundle": "npm run build && node bundle-test.js"
   },
   "keywords": [],
