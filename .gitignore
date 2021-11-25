@@ -3,3 +3,4 @@ zkFiles/
 contracts/
 build/
 dist/
+.parcel-cache/

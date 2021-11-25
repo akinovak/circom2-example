@@ -7,7 +7,8 @@
     "clean": "rimraf dist",
     "build": "npm run clean && rollup -c rollup.config.ts",
     "test": "jest --forceExit",
-    "test:js-bundle": "npm run build && node bundle-test.js"
+    "test:js-bundle": "npm run build && node bundle-test.js",
+    "test:front-env": "parcel front-env/index.html"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1",
     "jest-config": "^27.3.1",
+    "parcel": "^2.0.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.58.3",
     "rollup-plugin-typescript2": "^0.30.0",
